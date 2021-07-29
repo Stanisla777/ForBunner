@@ -71,7 +71,7 @@ footer {
 .container {
   zoom: 1;
   width: 100%;
-  max-width: 1140px;
+  max-width: 728px;
   margin: 0 auto;
   padding: 0 15px;
   position: relative;
@@ -474,6 +474,10 @@ textarea:focus {
   margin-top: 20px;
 }
 
+.modal-form__input.error {
+  border-color: red;
+}
+
 .agree-to-hand {
   margin-top: 20px;
   position: relative;
@@ -566,6 +570,24 @@ textarea:focus {
 
 .modal__btn:hover {
   background-color: #8bc540;
+}
+
+.more-materials {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 27px;
+}
+
+#check-error {
+  display: none!important;
+}
+
+.error {
+  display: block;
+  margin-top: 5px;
+  color: red;
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

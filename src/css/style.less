@@ -63,7 +63,7 @@ section,header,footer{
 .container {
   zoom: 1;
   width: 100%;
-  max-width: 1140px;
+  max-width: 728px;
   margin: 0 auto;
   padding: 0 15px;
   position: relative;
@@ -393,6 +393,9 @@ input:focus, textarea:focus{
     &:not(:first-child){
       margin-top: 20px;
     }
+    &.error{
+      border-color: red;
+    }
   }
 }
 .agree-to-hand{
@@ -474,4 +477,19 @@ input:focus, textarea:focus{
   &:hover{
     background-color: #8bc540;
   }
+}
+.more-materials{
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 27px;
+}
+#check-error{
+  display: none!important;
+}
+.error{
+  display: block;
+  margin-top: 5px;
+  color: red;
 }
