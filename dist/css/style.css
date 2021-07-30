@@ -686,6 +686,9 @@ div[id*="ascrail"] div {
   cursor: pointer;
   background-color: #fff;
 }
+.button_form-send{
+  max-width: 143px;
+}
 
 .button_form button {
   background-color: transparent;

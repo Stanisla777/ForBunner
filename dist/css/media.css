@@ -32,7 +32,7 @@ only screen and (min-resolution: 1.5dppx){
 @media screen and (max-width: 480px){
 
   .modal__title{
-    font-size: 27px;
+    font-size: 32px;
   }
   .icon-round{
     height: 2rem;
@@ -51,7 +51,7 @@ only screen and (min-resolution: 1.5dppx){
     margin-top: 15px;
   }
   .close-modal{
-    right: 50%;
-    transform: translateX(50%);
+    /*right: 50%;*/
+    /*transform: translateX(50%);*/
   }
 }
