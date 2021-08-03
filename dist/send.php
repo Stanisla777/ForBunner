@@ -15,7 +15,7 @@ $debug = boolval(htmlspecialchars(trim($_REQUEST['debug'])));
 
 $title = '';
 if ($name && $phone) {
-    $title = 'Заказа обратного звонка с сайта ' . $_SERVER['HTTP_HOST'];
+    $title = 'Заказ обратного звонка с сайта ' . $_SERVER['HTTP_HOST'];
 }
 if ($email && $question) {
     $title = 'Вопрос от посетителя сайта ' . $_SERVER['HTTP_HOST'];
@@ -27,9 +27,10 @@ if ($title) {
     $mailTo = 'consultant@domrf.ru';
     $message = '';
     $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=utf-8\r\n";
-    $headers .= "Content-Transfer-Encoding: 8bit \r\n";
-    $headers .= "From: Заявка с сайта <" . $mailFrom . ">\r\n";
+    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
+    //$headers .= "Content-Transfer-Encoding: 8bit \r\n";
+//    $headers .= "From: Заявка с сайта <" . $mailFrom . ">\r\n";
+    $headers .="From: =?utf-8?b?".base64_encode('Заявка с сайта')."?= <".$mailFrom.">\r\n";
     $headers .= "Bcc: artem.subochev@domrf.ru\r\n";
 
     $message .= '<p>' . $title . '</p><br><br>';
@@ -37,7 +38,10 @@ if ($title) {
 
     if ($name) $message .= '<p>Имя: ' . $name . '</p>';
 
-    if ($email) $message .= '<p>Email: ' . $email . '</p>';
+    if ($email) {
+        $message .= '<p>Email: ' . $email . '</p>';
+        $headers .= "Reply-To: " . $email . "\r\n";
+    }
 
     if ($phone) $message .= '<p>Телефон: ' . $phone . '</p>';
 
@@ -61,13 +65,12 @@ if ($title) {
 
 } else {
     if ($debug){
-        echo "Missed some of parameters";
+        echo "Missed some parameters";
     }
 }
 if (!$debug) {
     $host = $_SERVER['HTTP_HOST'];
     $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    $extra = 'mypage.php';
     header("Location: http://$host$uri/index.html");
     exit;
 }

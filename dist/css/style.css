@@ -278,7 +278,7 @@ textarea:focus {
 .modal {
   display: none;
   width: 62%;
-  height: 97vh;
+  height: 89vh;
   max-height: 100%;
   position: fixed;
   left: 50%;
@@ -288,11 +288,11 @@ textarea:focus {
   transform: translate(-50%, -50%);
   /*transform: translate(-50%, 0);*/
   z-index: 1100;
-  overflow: hidden;
   border-radius: 8px;
 }
 
 .modal__container {
+  max-height: calc(100vh - 2rem);
   border-radius: 8px;
   position: absolute;
   top: 50%;
